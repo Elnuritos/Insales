@@ -16,9 +16,9 @@ trait OrderTrait {
      */
     public function createOrder(array $order) : Entity
     {
-        $in=new Insales();
-        return $in->executeCreateRequest(
-            $in->generateUrl(self::API_URL_ORDERS),
+        
+        return $this->client->executeCreateRequest(
+            $this->generateUrl(self::API_URL_ORDERS),
             $order
         );
     }
@@ -31,8 +31,8 @@ trait OrderTrait {
      */
     public function editOrder(int $id, array $order) : Entity
     {
-        $in=new Insales();
-        return $in->executeUpdateRequest($in->generateUrl(self::API_URL_ORDERS, $id), $order);
+        
+        return $this->client->executeUpdateRequest($this->generateUrl(self::API_URL_ORDERS, $id), $order);
     }
 
     /**
@@ -42,8 +42,8 @@ trait OrderTrait {
      */
     public function getOrders(array $params = array()) : Entity
     {
-        $in=new Insales();
-        return $in->executeListRequest($in->generateUrl(self::API_URL_ORDERS), $params);
+        
+        return $this->client->executeListRequest($this->generateUrl(self::API_URL_ORDERS), $params);
     }
 
     /**
@@ -53,9 +53,9 @@ trait OrderTrait {
      */
     public function getOrderById(int $id) : Entity
     {
-        $in=new Insales();
-        return $in->executeGetRequest(
-            $in->generateUrl(self::API_URL_ORDERS, $id),
+        
+        return $this->client->executeGetRequest(
+            $this->generateUrl(self::API_URL_ORDERS, $id),
             $id
         );
     }
@@ -66,9 +66,9 @@ trait OrderTrait {
      */
     public function getOrdersCount() : Entity
     {
-        $in=new Insales();
-        $response = $in->request(
-            $in::METHOD_GET,
+        
+        $response = $this->request(
+            $this::METHOD_GET,
             self::API_URL . self::API_URL_ORDERS . '/count.json'
         );
         return $response;
@@ -81,18 +81,18 @@ trait OrderTrait {
      */
     public function removeOrder(int $id) : Entity
     {
-        $in=new Insales();
-        return $in->executeRemoveRequest(
-            $in->generateUrl(self::API_URL_ORDERS, $id),
+        
+        return $this->client->executeRemoveRequest(
+            $this->generateUrl(self::API_URL_ORDERS, $id),
             $id
         );
     }
 
     public function updateOrder(int $id, array $data) : Entity
     {
-         $in=new Insales();
-        return $in->executeUpdateRequest(
-            $in->generateUrl(self::API_URL_ORDERS, $id),
+         
+        return $this->client->executeUpdateRequest(
+            $this->generateUrl(self::API_URL_ORDERS, $id),
             $data
         );
     }

@@ -18,8 +18,8 @@ trait ProductTrait {
      * @return \Insales\Abstracts\Entity
      */
     public function createProduct(array $product) {
-        $in=new Insales();
-        return $in->executeCreateRequest(
+        
+        return $this->client->executeCreateRequest(
             $this->generateUrl(self::API_URL_PRODUCTS),
             $product
         );
@@ -31,8 +31,8 @@ trait ProductTrait {
      * @return \Insales\Abstracts\Entity
      */
     public function getProducts($params = []) {
-           $in=new Insales();
-        return $in->executeListRequest(
+           
+        return $this->client->executeListRequest(
             $this->generateUrl(self::API_URL_PRODUCTS),
             $params
         );
@@ -44,8 +44,8 @@ trait ProductTrait {
      * @return \Insales\Abstracts\Entity
      */
     public function getProductById($id) {
-        $in=new Insales();
-        return $in->executeGetRequest(
+        
+        return $this->client->executeGetRequest(
             $this->generateUrl(self::API_URL_PRODUCTS, $id),
             $id
         );
@@ -57,8 +57,8 @@ trait ProductTrait {
      * @return \Insales\Abstracts\Entity Результат удаления
      */
     public function removeProduct($id) {
-        $in=new Insales();
-        return $in->executeRemoveRequest(
+        
+        return $this->client->executeRemoveRequest(
             $this->generateUrl(self::API_URL_PRODUCTS, $id),
             $id
         );
@@ -72,8 +72,8 @@ trait ProductTrait {
      */
     public function updateProduct(int $id, array $data) : Entity
     {
-        $in=new Insales();
-        return $in->executeUpdateRequest(
+        
+        return $this->client->executeUpdateRequest(
             $this->generateUrl(self::API_URL_PRODUCTS, $id),
             $data
         );
@@ -84,8 +84,8 @@ trait ProductTrait {
      * @return \Insales\Abstracts\Entity
      */
     public function getProductsCount() {
-        $in=new Insales();
-        return $in->executeGetRequest(
+        
+        return $this->client->executeGetRequest(
             $this->generateUrl(self::API_URL_PRODUCTS_COUNT),
             null
         );

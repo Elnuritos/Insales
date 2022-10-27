@@ -19,9 +19,9 @@ trait ProductFieldTrait
      */
     public function createProductField(array $data) : Entity
     {
-         $in=new Insales();
-        return $in->executeCreateRequest(
-            $in->generateUrl(self::API_URL_PRODUCT_FIELD),
+         
+        return $this->client->executeCreateRequest(
+            $this->generateUrl(self::API_URL_PRODUCT_FIELD),
             $data
         );
     }
@@ -33,9 +33,9 @@ trait ProductFieldTrait
      */
     public function removeProductField(int $id) : Entity
     {
-         $in=new Insales();
-        return $in->executeRemoveRequest(
-            $in->generateUrl(self::API_URL_PRODUCT_FIELD, $id),
+         
+        return $this->client->executeRemoveRequest(
+            $this->generateUrl(self::API_URL_PRODUCT_FIELD, $id),
             $id
         );
     }
@@ -47,9 +47,9 @@ trait ProductFieldTrait
      */
     public function getProductField(int $id) : Entity
     {
-         $in=new Insales();
-        return $in->executeGetRequest(
-            $in->generateUrl(self::API_URL_PRODUCT_FIELD, $id),
+         
+        return $this->client->executeGetRequest(
+            $this->generateUrl(self::API_URL_PRODUCT_FIELD, $id),
             $id
         );
     }
@@ -60,9 +60,9 @@ trait ProductFieldTrait
      */
     public function getProductFields() : Entity
     {
-         $in=new Insales();
-        return $in->executeListRequest(
-            $in->generateUrl(self::API_URL_PRODUCT_FIELD)
+         
+        return $this->client->executeListRequest(
+            $this->generateUrl(self::API_URL_PRODUCT_FIELD)
         );
     }
 
@@ -74,9 +74,9 @@ trait ProductFieldTrait
      */
     public function updateProductField(int $id, array $data) : Entity
     {
-         $in=new Insales();
-        return $in->executeUpdateRequest(
-            $in->generateUrl(self::API_URL_PRODUCT_FIELD, $id),
+         
+        return $this->client->executeUpdateRequest(
+            $this->generateUrl(self::API_URL_PRODUCT_FIELD, $id),
             $data
         );
     }
