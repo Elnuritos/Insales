@@ -14,5 +14,16 @@
     "php": "^8.0",
     "ext-curl": "*",
     "guzzlehttp/guzzle": "^7.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Insales\\": "src",
+      "Insales\\Library\\": "src/Library",
+      "Insales\\Entities\\": "src/Entities",
+      "Insales\\Abstracts\\": "src/Abstracts",
+      "Insales\\Handlers\\": "src/Handlers",
+      "Insales\\Interfaces\\": "src/Interfaces",
+      "Insales\\Traits\\": "src/Traits"
+    }
   }
 }
