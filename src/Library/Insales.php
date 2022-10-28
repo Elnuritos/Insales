@@ -3,7 +3,7 @@
 namespace Insales\Library;
 
 
-use Insales\library\Client as HttpClient;
+use Insales\Library\Client as HttpClient;
 use Insales\Traits\{
     OrderTrait,
     ProductTrait,
@@ -11,7 +11,7 @@ use Insales\Traits\{
 };
 
 
-class Insales
+class Gen
 {
     use
         OrderTrait,

@@ -1,15 +1,15 @@
 <?php
 
-namespace InSales\Entities;
+namespace Insales\Entities;
 
 use Insales\Abstracts\Entity;
 use Insales\Interfaces\EntityInterface;
-use Insales\library\Insales;
+use Insales\Library\Gen;
 use Insales\Traits\OrderTrait;
 
 class Order extends Entity implements EntityInterface
 {
     use OrderTrait;
 
-    public function __construct(private Insales $insales){}
+    public function __construct(private Gen $insales){}
 }
