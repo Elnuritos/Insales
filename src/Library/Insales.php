@@ -1,6 +1,6 @@
 <?php
 
-namespace Insales\library;
+namespace Insales\Library;
 
 
 use Insales\library\Client as HttpClient;
