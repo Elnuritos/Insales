@@ -11,7 +11,7 @@ use Insales\Traits\{
 };
 
 
-class Gen
+class Insales
 {
     use
         OrderTrait,
