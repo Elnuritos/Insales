@@ -96,4 +96,32 @@ trait OrderTrait {
             $data
         );
     }
+      /**
+     * Создание корзины заказа по идентификатору
+     * @param int $id Идентификатор заказа
+     * @param array $data Параметры
+     * @return \Insales\Abstracts\Entity
+     */
+    public function createOrderLineByProduct(int $id, array $data) : Entity
+    {
+         
+        return $this->client->executeUpdateRequest(
+            $this->generateUrl(self::API_URL_ORDERS, $id),
+            $data
+        );
+    }
+      /**
+     * Удаление корзины заказа по идентификатору
+     * @param int $id Идентификатор заказа
+     * @param array $data Параметры
+     * @return \Insales\Abstracts\Entity
+     */
+    public function removeOrderLine(int $id,array $data) : Entity
+    {
+        
+        return $this->client->executeUpdateRequest(
+            $this->generateUrl(self::API_URL_ORDERS, $id),
+            $data
+        );
+    }
 }

@@ -4,12 +4,12 @@ namespace Insales\Entities;
 
 use Insales\Abstracts\Entity;
 use Insales\Interfaces\EntityInterface;
-use Insales\Library\Gen;
+use Insales\Library\Insales;
 use Insales\Traits\OrderTrait;
 
 class Order extends Entity implements EntityInterface
 {
     use OrderTrait;
 
-    public function __construct(private Gen $insales){}
+    public function __construct(private Insales $insales){}
 }
