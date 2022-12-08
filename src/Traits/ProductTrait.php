@@ -80,6 +80,21 @@ trait ProductTrait {
     }
 
     /**
+     * Обновление товара
+     * @param int $id
+     * @param array $data
+     * @return Entity
+     */
+    public function updateProductBundle(array $data) : Entity
+    {
+        
+        return $this->client->executeUpdateRequest(
+            $this->generateUrl(self::API_URL_PRODUCTS, 4),
+            $data
+        );
+    }
+
+    /**
      * Получение количества товаров
      * @return \Insales\Abstracts\Entity
      */
